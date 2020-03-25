@@ -2,11 +2,7 @@ const express = require('express');
 
 const routes = express.Router();
 
-const homeController = require('./controllers/homeController');
-const dadosController = require('./controllers/dadosController');
-
-routes.get('/', homeController.index);
-routes.get('/about', homeController.about);
+const dadosController = require('../controllers/dadosController');
 
 routes.get('/dados/evento', dadosController.getEvento);
 routes.get('/dados', dadosController.getDados);

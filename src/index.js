@@ -2,9 +2,12 @@ const express = require('express');
 
 const app = express();
 
-const routes = require('./routes');
+const dadosRoutes = require('./routes/dadosRoute');
+const homeRoutes = require('./routes/homeRoute');
 
 app.use(express.json());
-app.use(routes);
+
+app.use(dadosRoutes);
+app.use(homeRoutes);
 
 app.listen(3000);
