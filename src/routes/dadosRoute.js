@@ -2,10 +2,10 @@ const express = require('express');
 
 const routes = express.Router();
 
-const dadosController = require('../controllers/dadosController');
+const DadosController = require('../controllers/DadosController');
 
-routes.get('/dados/evento', dadosController.getEvento);
-routes.get('/dados', dadosController.getDados);
-routes.get('/dados/:id', dadosController.getDadosById);
+routes.get('/dados/evento', DadosController.getEvento);
+routes.get('/dados', DadosController.getDados);
+routes.get('/dados/:id', DadosController.getDadosById);
 
 module.exports = routes;

@@ -2,9 +2,9 @@ const express = require('express');
 
 const routes = express.Router();
 
-const homeController = require('../controllers/homeController');
+const HomeController = require('../controllers/HomeController');
 
-routes.get('/', homeController.index);
-routes.get('/about', homeController.about);
+routes.get('/', HomeController.index);
+routes.get('/about', HomeController.about);
 
 module.exports = routes;

@@ -21,24 +21,24 @@ const dados = [
     }
 ];
 
-exports.getDados = (request, response) => {
-    return response.json(dados);
-};
+module.exports = {
+    getDados(request, response) {
+        return response.json(dados);
+    },
+    getEvento(request, response) {
+        return response.json({
+            evento: 'Nome do evento',
+            aluno: 'Wilson Donizetti'
+        });
+    },
+    getDadosById(request, response) {
+        const query = request.params;
+        const item = dados.filter(i => i.key == query.id);
 
-exports.getEvento = (request, response) => {
-    return response.json({
-        evento: 'Nome do evento',
-        aluno: 'Wilson Donizetti'
-    });
-};
-
-exports.getDadosById = (request, response) => {
-    const query = request.params;
-    const item = dados.filter(i => i.key == query.id);
-
-    if (query && item) {
-        return response.json(item);
-    } else {
-        return response.send('nenhum dado encontrado');
+        if (query && item) {
+            return response.json(item);
+        } else {
+            return response.send('nenhum dado encontrado');
+        }
     }
 };
